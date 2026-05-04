@@ -69,10 +69,7 @@ unsigned int get_i64_count(int64_t n)
 				if (x >= UINT64_C(1000000000000000))
 					return 16;
 
-				if (x >= UINT64_C(100000000000000))
-					return 15;
-
-				return 14;
+				return 15;
 			}
 		}
 		else
