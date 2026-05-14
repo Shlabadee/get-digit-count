@@ -233,3 +233,119 @@ unsigned int get_u64_count(uint64_t x)
 		}
 	}
 }
+
+unsigned int get_u32_hex_count(uint32_t x)
+{
+	if (x >= UINT32_C(0x10000))
+	{
+		if (x >= UINT32_C(0x1000000))
+		{
+			if (x >= UINT32_C(0x10000000))
+				return 8;
+
+			return 7;
+		}
+		else
+		{
+			if (x >= UINT32_C(0x100000))
+				return 6;
+
+			return 5;
+		}
+	}
+	else
+	{
+		if (x >= UINT32_C(0x100))
+		{
+			if (x >= UINT32_C(0x1000))
+				return 4;
+
+			return 3;
+		}
+		else
+		{
+			if (x >= UINT32_C(0x10))
+				return 2;
+
+			return 1;
+		}
+	}
+}
+
+unsigned int get_u64_hex_count(uint64_t x)
+{
+	if (x >= UINT64_C(0x100000000))
+	{
+		if (x >= UINT64_C(0x1000000000000))
+		{
+			if (x >= UINT64_C(0x100000000000000))
+			{
+				if (x >= UINT64_C(0x1000000000000000))
+					return 16;
+
+				return 15;
+			}
+			else
+			{
+				if (x >= UINT64_C(0x10000000000000))
+					return 14;
+
+				return 13;
+			}
+		}
+		else
+		{
+			if (x >= UINT64_C(0x10000000000))
+			{
+				if (x >= UINT64_C(0x100000000000))
+					return 12;
+
+				return 11;
+			}
+			else
+			{
+				if (x >= UINT64_C(0x1000000000))
+					return 10;
+
+				return 9;
+			}
+		}
+	}
+	else
+	{
+		if (x >= UINT64_C(0x10000))
+		{
+			if (x >= UINT64_C(0x1000000))
+			{
+				if (x >= UINT64_C(0x10000000))
+					return 8;
+
+				return 7;
+			}
+			else
+			{
+				if (x >= UINT64_C(0x100000))
+					return 6;
+
+				return 5;
+			}
+		}
+		else
+		{
+			if (x >= UINT64_C(0x100))
+			{
+				if (x >= UINT64_C(0x1000))
+					return 4;
+
+				return 3;
+			}
+			else
+			{
+				if (x >= UINT64_C(0x10))
+					return 2;
+
+				return 1;
+			}
+		}
+	}
+}
